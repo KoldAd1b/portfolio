@@ -209,6 +209,7 @@ const MenuItem = styled.li`
   color: ${(props) => props.theme.text};
   cursor: pointer;
   font-weight: light;
+  font-family: "Playfair Display", sans-serif;
 
   text-transform: uppercase;
 
@@ -217,6 +218,7 @@ const MenuItem = styled.li`
 
   background-size: 200%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 
@@ -227,7 +229,8 @@ const MenuItem = styled.li`
   &::after {
     content: "";
     display: block;
-    width: 0;
+    width: 0 !important;
+
     height: 2px;
     background: ${(props) => props.theme.text};
     transition: width 0.3s ease;

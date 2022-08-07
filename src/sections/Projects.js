@@ -158,7 +158,7 @@ const Info = styled.div`
 `;
 
 const Item = styled.div`
-  width: calc(1.5 / 5 * 100%);
+  width: calc(1.75 / 5 * 100%);
   color: ${(props) => props.theme.body};
   margin: 2rem 1rem;
   border-radius: 6px;
