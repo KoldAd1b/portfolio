@@ -2,7 +2,7 @@ import { doc, setDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import contactBg from "../assets/contact-bg.jpg";
+
 import { db } from "../firebase";
 
 const Contact = () => {
@@ -48,7 +48,7 @@ const Contact = () => {
   return (
     <Section>
       <Container>
-        <ImageContainer bgImage={contactBg}>
+        <ImageContainer>
           <h1>
             I'd love to hear from you
             <span>
@@ -142,7 +142,8 @@ const Container = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  background: ${(props) => `url(${props.bgImage})`};
+  background: #000000;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
