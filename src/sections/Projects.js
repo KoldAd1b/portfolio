@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import gsap from "gsap";
+import { BsEyeFill } from "react-icons/bs";
 import stockqino from "../assets/Projects/stockqino.png";
 import furnidence from "../assets/Projects/Furnidence.png";
 import weatheringAway from "../assets/Projects/weatheringaway.png";
@@ -45,7 +46,11 @@ const ProjectItem = ({ img, title, description, links }) => {
 
   const clickAnimation = () => {
     if (width <= 1024) {
-      setHover((prev) => !prev);
+      if (!hover) {
+        setHover(true);
+      } else {
+        setHover(false);
+      }
     }
     return;
   };
@@ -56,14 +61,16 @@ const ProjectItem = ({ img, title, description, links }) => {
       onMouseOut={() => setHover(false)}
       onClick={clickAnimation}
     >
-      <ImageContainer img={img}></ImageContainer>
+      <ImageContainer img={img} hovering={hover}>
+        <BsEyeFill className="eye" />
+      </ImageContainer>
 
       <Info ref={containerRef}>
         <h3>
           {title} <span></span>
         </h3>
         <p>{description}</p>
-        {links[0] && (
+        {links?.[0] && (
           <button>
             <a href={links[0]} target="_blank" rel="noreferrer">
               Live
@@ -192,6 +199,20 @@ const ImageContainer = styled.div`
   cursor: pointer;
 
   background-color: ${(props) => props.theme.carouselColor};
+
+  .eye {
+    font-size: 3rem;
+    color: #edeade;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transition: opacity 0.5s ease-in-out;
+
+    opacity: ${(props) => {
+      return props.hovering ? "0%" : "75%";
+    }};
+  }
 
   img {
     object-fit: cover;

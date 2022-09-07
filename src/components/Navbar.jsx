@@ -241,7 +241,7 @@ const MenuItem = styled.li`
 
   @media (max-width: 64em) {
     margin: 1rem 0;
-
+    font-size: 2.2rem;
     &::after {
       display: none;
     }
