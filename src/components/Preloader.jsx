@@ -86,6 +86,9 @@ const PreloaderContainer = styled.div`
     padding: 1px 0px;
     background-color: white;
   }
+  @media (max-width: 64em) {
+    display: none;
+  }
 `;
 
 export default Preloader;

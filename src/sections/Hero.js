@@ -45,7 +45,7 @@ const Hero = () => {
     <Section id="Hero">
       <Container>
         <Box>
-          <span className="welcome">Hello There! Welcome to my Potfolio</span>
+          <span className="welcome">Hi There! Welcome to my Potfolio</span>
           <h1 className="typewrite">
             {`I'm Adib `}
             <span
