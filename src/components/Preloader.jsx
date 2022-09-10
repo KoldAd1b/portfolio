@@ -25,14 +25,14 @@ const Preloader = () => {
       duration: 0.8,
       width: "0%",
     });
+
+    setTimeout(move, 750);
+
     // eslint-disable-next-line
   }, []);
 
   let width = 1;
   let interval;
-  const move = () => {
-    interval = setInterval(frame, 10);
-  };
   const frame = () => {
     if (width >= 100) {
       clearInterval(interval);
@@ -43,9 +43,9 @@ const Preloader = () => {
       setProgress((prev) => width);
     }
   };
-  window.addEventListener("load", function (e) {
-    move();
-  });
+  const move = () => {
+    interval = setInterval(frame, 20);
+  };
 
   return (
     <PreloaderContainer ref={(el) => (preloader = el)}>
